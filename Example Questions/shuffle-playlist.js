@@ -1,5 +1,3 @@
-// shuffle-playlist.js
-
 // Shuffle playlist -------------
 // 1. Expect an array of objects
 // 2. Randomly shuffle the array

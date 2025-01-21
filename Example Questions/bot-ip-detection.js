@@ -1,5 +1,3 @@
-// bot-ip-detection.js
-
 // BOT IP Detection ----------------
 // 1. Expect an array of IP addresses
 // 2. Deny matching IPs from the array
@@ -9,8 +7,6 @@
 // BONUS: Some of the IPs are single IPs, others are a range of all sub IPs
 // BONUS: Create 2-4 example test cases
 // BONUS: Determine Big O performance of solution
-
-// cider format????
 
 const denyList = [
     '20.191.45.212',
@@ -27,33 +23,26 @@ const denyList = [
     '40.76.162.247'
 ];
 
-
-// const range = ['40.76.0.247', '40.76.255.247'];
-
-// 40.76.0.247
-// 040.076.000.247
-
-// Char Code
-// 0	48
-// 1	49
-// 2	50
-// 3	51
-// 4	52
-// 5	53
-// 6	54
-// 7	55
-// 8	56
-// 9	57
-
-// Range: 0.0.0.0 - 1.0.0.0
-// Input: 0.1.0.0
-// String Comparison
+// Range Formats & Solutions --------------------
+// Arrays:
+// -- const range = ['40.76.0.247', '40.76.255.247'];
+// Cider Format Solution:
+// -- 192.168.1.1/24
+// -- https://michelburnett27.medium.com/understanding-cidr-notation-and-ip-address-range-3ad28194bc8d
+// String Comparison Solution:
 // -- Requires padding, needs the same number of digits to give a correct result
 // -- Trade off is that it loops through each char code for each number in the string
-console.log('abc' > 'xyz');
+// ASCII Char Code
+// -- https://www.w3schools.com/charsets/ref_html_ascii.asp
 
+// No IP Ranges, only static IPs
 function verifyIPAddress(ipAddress) {
     
 }
-
 verifyIPAddress('40.76.163.7');
+
+// Test Cases:
+// 1. Sanity Check (true == true)
+console.assert(true == true, '⚠️ Sanity Check');
+// 2. Character Assertion Sanity
+console.assert('xyz' > 'abc', 'Character Assert Sanity');
