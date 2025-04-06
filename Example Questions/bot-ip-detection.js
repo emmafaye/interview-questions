@@ -8,7 +8,7 @@
 // BONUS: Create 2-4 example test cases
 // BONUS: Determine Big O performance of solution
 
-const denyList = [
+const denyList = new Set([
     '20.191.45.212',
     '40.88.21.235',
     '40.76.173.151',
@@ -21,7 +21,7 @@ const denyList = [
     '40.76.163.23',
     '40.76.162.191',
     '40.76.162.247'
-];
+]);
 
 // Range Formats & Solutions --------------------
 // Arrays:
@@ -37,9 +37,13 @@ const denyList = [
 
 // No IP Ranges, only static IPs
 function verifyIPAddress(ipAddress) {
-    
+    if (denyList.has(ipAddress)) {
+        return true;
+    }
+
+    return false;
 }
-verifyIPAddress('40.76.163.7');
+console.log(verifyIPAddress('40.76.163.7'));
 
 // Test Cases:
 // 1. Sanity Check (true == true)
